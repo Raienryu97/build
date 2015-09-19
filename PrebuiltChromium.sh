@@ -38,8 +38,6 @@ cd $ScriptDir/../frameworks;
 rm -rf webview;
 git clone https://www.github.com/AICP/frameworks_webview.git -b lp5.1;
 mv frameworks_webview webview;
-echo " Taking a backup of downloaded prebuilt webview so that further downloads is not necessary"; 
-cp -rf webview temp;
 echo " ";
 echo "Adding a few lines in core_minimal.mk";
 cd $ScriptDir/target/product;
@@ -53,7 +51,6 @@ EOF
 
 echo "Added prebuilt chromium support. Now build as usual";
 echo " ";
-echo "After every repo sync Remember to delete frameworks/webview and rename frameworks/temp as frameworks/webview";
 sleep 1s
 echo "Press Return Key to exit this setup"
 read key;
